@@ -44,18 +44,18 @@ private:
 int main() {
     std::vector<Flight> flights;
 
-    // Add sample flights
-    flights.push_back(Flight("AA101", "New York", "Los Angeles", 100));
-    flights.push_back(Flight("UA202", "Chicago", "San Francisco", 120));
-    flights.push_back(Flight("DL303", "Dallas", "Miami", 80));
-    flights.push_back(Flight("VR101", "Bhubaneshwar", "Varanasi", 180));
+    flights.push_back(Flight("AA101", "Delhi", "Mumbai", 94));
+    flights.push_back(Flight("UA202", "Ranchi", "Chennai", 146));
+    flights.push_back(Flight("DL303", "Delhi", "Dubai", 76));
+    flights.push_back(Flight("VR101", "Bhubaneshwar", "Delhi", 56));
 
     int choice;
     std::string flightNumber;
-    bool booked = false;  // Moved the variable declaration outside of the switch
+    bool booked = false;  
 
     do {
-        std::cout << "Airline Reservation System" << std::endl;
+        std::cout << "Welcome to CVRCE Airline Reservation System" << std::endl;
+        std::cout << "How can we help you today! " << std::endl;
         std::cout << "1. Display available flights" << std::endl;
         std::cout << "2. Book a ticket" << std::endl;
         std::cout << "3. Exit" << std::endl;
@@ -76,7 +76,7 @@ int main() {
                 std::cin >> flightNumber;
                 std::cout << "Enter the number of seats to book: ";
                 std::cin >> numSeats;
-                booked = false;  // Reset 'booked' before attempting to book
+                booked = false;  
                 for (Flight& flight : flights) {
                     if (flight.getFlightNumber() == flightNumber) {
                         booked = flight.bookSeat(numSeats);
